@@ -1,0 +1,236 @@
+@media only screen and (max-width: 800px) {
+	/* Force table to not be like tables anymore */
+		.carTable table, 
+		.carTable thead, 
+		.carTable tbody, 
+		.carTable th, 
+		.carTable td, 
+		.carTable tr { 
+		display: block; 
+	}
+		/*just hide content*/
+		.carTable thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	.carTable tr { 
+	border: 1px solid #ccc; 
+	}
+	
+	.carTable td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:right;
+	}
+	
+	.carTable td .panel{
+		text-align:center;
+		padding-right:0px;
+	}
+	
+	.carTable td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+			/*
+	Label the data
+	*/
+	.carTable td:before { content: attr(data-title); }
+	}
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 4.0em;
+}
+
+table {
+	width: 100%;
+	height: 100%;
+}
+
+th {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+td {
+	text-align: center;
+	font-size: 1.3em;
+}
+
+.carTable {
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 100%;;
+}
+
+.reserve {
+	width: 175px;
+}
+
+.panel {
+	width: 100px;
+	background: -webkit-linear-gradient(#ffffff, #c1c1c1);
+	-webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+	margin: 0 auto;
+	padding: 0;
+}
+
+a,a:link,a:visited,a:hover,a:focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:active {
+	color: white;
+}
+
+.panel:hover {
+	background: -webkit-linear-gradient(#c1c1c1, #ffffff);
+	-webkit-box-shadow: inset 0 0 1px #000000;
+}
+
+.panel:active {
+	background-color: #74e3ed;
+	background: -webkit-linear-gradient(#c1c1c1, #5b5b5b);
+}
+
+.modal-body {
+	padding: 0px;
+	text-align: center;
+	width:100%;
+}
+
+.modal-body,ul {
+	list-style-type: none;
+	padding: 0px;
+	text-align: center;
+}
+
+.modal-body,li {
+	padding: 0px;
+	margin: 0px;
+}
+.listFormat{
+	width:60%;
+	margin:0 auto;
+	padding-left:0%;
+	border-bottom:1px solid black;
+
+}
+
+.listInfoAlign {
+	margin-left:10%;
+	padding:0px;
+	float:right;
+}
+.divSet{
+	float:left;
+}
+.modal-title{
+	font-weight:bold;
+}
+.modal-header {
+	text-align: center;
+}
+.carInfo{
+	font-size:1.2em;
+	color:#3f3f3f;
+	font-weight:bold;
+	margin:0 auto;
+	width:50%;
+}
+.formContainer{
+	width:100%;
+	padding-bottom:15px;
+}
+.formStyles{
+	display:table;
+	width:50%;
+	margin:0 auto;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+}
+.inputStyles{
+	position:relative;
+	right:10%;
+	display:table-cell;
+	border-radius:3px;
+	border:1px solid black;
+	width:80%;
+	height:35px;
+	margin-left:5%;
+	margin-top: 10px;
+	margin-bottom:10px;
+	padding:0px;
+}
+.textInputStyles{
+	position:relative;
+	right:8%;
+	display:table-cell;
+	border-radius:3px;
+	border:1px solid black;
+	width:80%;
+	margin:0px;
+	padding:0;
+	margin-left:0%;	
+}
+.labelCell{
+	color:#3f3f3f;
+	font-size:1.2em;
+	text-shadow: 0px 1px 0px #d1d1d1;
+	text-align:right;
+	display:table-cell;
+	margin:0;
+	width:25%;
+}
+#comments{
+	max-width:250px;
+	max-height:300px;
+}
+.para{
+	display:table-row;
+}
+#commentsLabel{
+	color:#3f3f3f;
+	font-size:1.2em;
+	text-shadow: 0px 1px 0px #d1d1d1;
+	display:table-cell;
+	vertical-align:middle;
+}
+.submitButton{
+	margin:0 auto;
+	width:100%;
+}
+#submitID{
+	width:100%;
+	border-radius:3px;
+	border:1px solid black;
+	margin-bottom:35px;
+	font-size:1.4em;
+	box-shadow: 1px 1px 2px #888888;
+}
+.clearDiv{
+	clear:both;
+}
+.checkBoxes{
+	float:left;
+	text-align:left;
+}

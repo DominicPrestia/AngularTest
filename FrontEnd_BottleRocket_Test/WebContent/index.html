@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ng-app="myReserveApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>FrontEnd Test</title>
+
+	<!-- Angular minified Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<!-- Latest jQuery minified  -->
+	<script type="text/javascript"  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="mainController.js"></script>
+	<script type="text/javascript"  src="modalController.js"></script>
+	<script type="text/javascript"  src="TruckController.js"></script>
+	<script type="text/javascript"  src="BoatController.js"></script>
+	<script src="js/angular-animate.min.js"></script>
+	<script src="js/ui-bootstrap-tpls-0.13.4.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	
+</head>
+
+<body ng-controller="MainController">
+
+<div class="row">
+	<div class="col-lg-12 text-center"><h1>Cars</h1></div>
+	
+</div>
+
+	<div class="carTable table-responsive text-center specTable]"> <!--ng-controller="ButtonController"-->
+		<table class="table specTable">
+			<thead>
+				<tr>
+					<th>Make</th>
+					<th>Model</th>
+					<th>Year</th>
+					<th>Color</th>
+					<th>Milage</th>
+					<th>Doors</th>
+					<th class="reserve">Horsepower</th>
+					<th>Price</th>
+					<th class="reserve"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="cars in car | orderBy:'year'">
+					<td data-title="Year:">{{cars.year}}</td>
+					<td data-title="Model:">{{cars.model}}</td>
+					<td data-title="Make:">{{cars.make}}</td>
+					<td data-title="Color:">{{cars.color}}</td>
+					<td data-title="Mileage:">{{cars.mileage | number}}</td>
+					<td data-title="Doors:">{{cars.doors}}</td>
+					<td data-title="Horsepower:">{{cars.horsepower}}</td>
+					<td data-title="Price:">{{cars.price | number}}</td>
+					<td>
+						<div class="panel panel-default" ng-controller="ModalController">
+						
+								<a  href="" ng-click="open('lg',car.indexOf(cars))">
+									Reserve		
+								</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+<div class="row">
+	<div class="col-lg-12 text-center"><h1>Trucks</h1></div>
+</div>
+
+	<div class="carTable table-responsive text-center">
+		<table class="table specTable">
+			<thead>
+				<tr>
+					<th>Make</th>
+					<th>Model</th>
+					<th>Year</th>
+					<th>Color</th>
+					<th>Milage</th>
+					<th>Doors</th>
+					<th class="reserve">Horsepower</th>
+					<th>Price</th>
+					<th class="reserve"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="trucks in truck | orderBy:'year'">
+					<td data-title="Year:">{{trucks.year}}</td>
+					<td data-title="Model:">{{trucks.model}}</td>
+					<td data-title="Make:">{{trucks.make}}</td>
+					<td data-title="Color:">{{trucks.color}}</td>
+					<td data-title="Mileage:">{{trucks.mileage | number}}</td>
+					<td data-title="Doors:">{{trucks.doors}}</td>
+					<td data-title="Horsepower:">{{trucks.horsepower}}</td>
+					<td data-title="Price:">{{trucks.price | number}}</td>
+					<td>
+						<div class="panel panel-default" ng-controller="TruckController">
+						
+								<a  href="" ng-click="open('lg',truck.indexOf(trucks))">
+									Reserve		
+								</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+<div class="row">
+	<div class="col-lg-12 text-center"><h1>Boats</h1></div>
+</div>
+
+	<div class="carTable table-responsive text-center">
+		<table class="table specTable">
+			<thead>
+				<tr>
+					<th>Make</th>
+					<th>Model</th>
+					<th>Year</th>
+					<th>Color</th>
+					<th>Engine Hours</th>
+					<th>Type</th>
+					<th>Price</th>
+					<th class="reserve"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="boats in boat | orderBy:'year'">
+					<td data-title="Year:">{{boats.year}}</td>
+					<td data-title="Model:">{{boats.model}}</td>
+					<td data-title="Make:">{{boats.make}}</td>
+					<td data-title="Color:">{{boats.color}}</td>
+					<td data-title="Engine Hours:">{{boats.engineHours | number}}</td>
+					<td data-title="Type:">{{boats.type}}</td>
+					<td data-title="Price:">{{boats.price | number}}</td>
+					<td>
+						<div class="panel panel-default" ng-controller="BoatController">
+						
+								<a  href="" ng-click="open('lg',boat.indexOf(boats))">
+									Reserve		
+								</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+
+
+</body>
+
+</html>
